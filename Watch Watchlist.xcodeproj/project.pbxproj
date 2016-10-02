@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0431DB9E1D9C558500768D92 /* CellSubscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0431DB9D1D9C558500768D92 /* CellSubscribe.swift */; };
+		0441AA4E1D9B08800052FF4F /* ViewControllerSubscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441AA4D1D9B08800052FF4F /* ViewControllerSubscribe.swift */; };
+		0441AA501D9B0BF10052FF4F /* TableControllerSubscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441AA4F1D9B0BF10052FF4F /* TableControllerSubscribe.swift */; };
 		0496941F1D97F49000A56C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496941E1D97F49000A56C00 /* AppDelegate.swift */; };
 		049694211D97F49000A56C00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049694201D97F49000A56C00 /* ViewController.swift */; };
 		049694241D97F49000A56C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049694221D97F49000A56C00 /* Main.storyboard */; };
@@ -20,6 +23,14 @@
 		049694461D97F49000A56C00 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049694451D97F49000A56C00 /* ExtensionDelegate.swift */; };
 		049694481D97F49000A56C00 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049694471D97F49000A56C00 /* NotificationController.swift */; };
 		0496944A1D97F49000A56C00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049694491D97F49000A56C00 /* Assets.xcassets */; };
+		04ADDFD21D9BCC00007AAA6F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADDFD11D9BCC00007AAA6F /* Globals.swift */; };
+		04BEBC691DA1AB0F005A8C3F /* TableControllerDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC681DA1AB0F005A8C3F /* TableControllerDashboard.swift */; };
+		04BEBC6B1DA1AB37005A8C3F /* ViewControllerDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEBC6A1DA1AB37005A8C3F /* ViewControllerDashboard.swift */; };
+		04DED7B81D9842C000FCBD1D /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DED7B71D9842C000FCBD1D /* Just.swift */; };
+		04DED7B91D9842C000FCBD1D /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DED7B71D9842C000FCBD1D /* Just.swift */; };
+		04DED7BB1D9843CE00FCBD1D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DED7BA1D9843CE00FCBD1D /* SwiftyJSON.swift */; };
+		04DED7BC1D9843CE00FCBD1D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DED7BA1D9843CE00FCBD1D /* SwiftyJSON.swift */; };
+		04EBF8C51D9D024A00A4A2F3 /* CellDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBF8C41D9D024A00A4A2F3 /* CellDashboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +76,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0431DB9D1D9C558500768D92 /* CellSubscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSubscribe.swift; sourceTree = "<group>"; };
+		0441AA4D1D9B08800052FF4F /* ViewControllerSubscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSubscribe.swift; sourceTree = "<group>"; };
+		0441AA4F1D9B0BF10052FF4F /* TableControllerSubscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableControllerSubscribe.swift; sourceTree = "<group>"; };
 		0496941B1D97F49000A56C00 /* Watch Watchlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch Watchlist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0496941E1D97F49000A56C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049694201D97F49000A56C00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +97,13 @@
 		049694471D97F49000A56C00 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		049694491D97F49000A56C00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0496944B1D97F49000A56C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04ADDFD11D9BCC00007AAA6F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		04BEBC681DA1AB0F005A8C3F /* TableControllerDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableControllerDashboard.swift; sourceTree = "<group>"; };
+		04BEBC6A1DA1AB37005A8C3F /* ViewControllerDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDashboard.swift; sourceTree = "<group>"; };
+		04DED7A21D98383C00FCBD1D /* Watch Watchlist WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Watch Watchlist WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
+		04DED7B71D9842C000FCBD1D /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Just.swift; sourceTree = "<group>"; };
+		04DED7BA1D9843CE00FCBD1D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		04EBF8C41D9D024A00A4A2F3 /* CellDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDashboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,12 +147,22 @@
 		0496941D1D97F49000A56C00 /* Watch Watchlist */ = {
 			isa = PBXGroup;
 			children = (
+				04ADDFD11D9BCC00007AAA6F /* Globals.swift */,
+				04DED7B71D9842C000FCBD1D /* Just.swift */,
+				04DED7BA1D9843CE00FCBD1D /* SwiftyJSON.swift */,
 				0496941E1D97F49000A56C00 /* AppDelegate.swift */,
 				049694201D97F49000A56C00 /* ViewController.swift */,
+				0441AA4D1D9B08800052FF4F /* ViewControllerSubscribe.swift */,
+				04BEBC6A1DA1AB37005A8C3F /* ViewControllerDashboard.swift */,
+				0441AA4F1D9B0BF10052FF4F /* TableControllerSubscribe.swift */,
+				04BEBC681DA1AB0F005A8C3F /* TableControllerDashboard.swift */,
+				0431DB9D1D9C558500768D92 /* CellSubscribe.swift */,
+				04EBF8C41D9D024A00A4A2F3 /* CellDashboard.swift */,
 				049694221D97F49000A56C00 /* Main.storyboard */,
 				049694251D97F49000A56C00 /* Assets.xcassets */,
 				049694271D97F49000A56C00 /* LaunchScreen.storyboard */,
 				0496942A1D97F49000A56C00 /* Info.plist */,
+				04DED7A21D98383C00FCBD1D /* Watch Watchlist WatchKit App-Bridging-Header.h */,
 			);
 			path = "Watch Watchlist";
 			sourceTree = "<group>";
@@ -241,6 +272,7 @@
 					0496942C1D97F49000A56C00 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2KC88UJK6B;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					0496943B1D97F49000A56C00 = {
@@ -305,8 +337,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0431DB9E1D9C558500768D92 /* CellSubscribe.swift in Sources */,
+				04BEBC6B1DA1AB37005A8C3F /* ViewControllerDashboard.swift in Sources */,
+				04DED7B81D9842C000FCBD1D /* Just.swift in Sources */,
+				0441AA501D9B0BF10052FF4F /* TableControllerSubscribe.swift in Sources */,
+				0441AA4E1D9B08800052FF4F /* ViewControllerSubscribe.swift in Sources */,
+				04BEBC691DA1AB0F005A8C3F /* TableControllerDashboard.swift in Sources */,
 				049694211D97F49000A56C00 /* ViewController.swift in Sources */,
+				04EBF8C51D9D024A00A4A2F3 /* CellDashboard.swift in Sources */,
 				0496941F1D97F49000A56C00 /* AppDelegate.swift in Sources */,
+				04ADDFD21D9BCC00007AAA6F /* Globals.swift in Sources */,
+				04DED7BB1D9843CE00FCBD1D /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +358,8 @@
 				049694481D97F49000A56C00 /* NotificationController.swift in Sources */,
 				049694461D97F49000A56C00 /* ExtensionDelegate.swift in Sources */,
 				049694441D97F49000A56C00 /* InterfaceController.swift in Sources */,
+				04DED7BC1D9843CE00FCBD1D /* SwiftyJSON.swift in Sources */,
+				04DED7B91D9842C000FCBD1D /* Just.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,13 +536,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2KC88UJK6B;
 				IBSC_MODULE = Watch_Watchlist_WatchKit_Extension;
 				INFOPLIST_FILE = "Watch Watchlist WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.steltix.Watch-Watchlist.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Watch Watchlist/Watch Watchlist WatchKit App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
@@ -511,13 +558,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2KC88UJK6B;
 				IBSC_MODULE = Watch_Watchlist_WatchKit_Extension;
 				INFOPLIST_FILE = "Watch Watchlist WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.steltix.Watch-Watchlist.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Watch Watchlist/Watch Watchlist WatchKit App-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
@@ -569,6 +619,7 @@
 				049694501D97F49000A56C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		049694521D97F49000A56C00 /* Build configuration list for PBXNativeTarget "Watch Watchlist WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +628,7 @@
 				049694541D97F49000A56C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		049694561D97F49000A56C00 /* Build configuration list for PBXNativeTarget "Watch Watchlist" */ = {
 			isa = XCConfigurationList;
@@ -585,6 +637,7 @@
 				049694581D97F49000A56C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
