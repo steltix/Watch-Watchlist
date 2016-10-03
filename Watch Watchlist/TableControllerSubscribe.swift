@@ -10,28 +10,44 @@
 import UIKit
 
 class TableControllerSubscribe: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+var refreshControl = UIRefreshControl()
     
-var refreshControl: UIRefreshControl!
+    
+    
+//var refreshControl: UIRefreshControl!
 var Watchlists: [Globals.Watchlist] = []
+    
+    @IBOutlet var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // Globals.updateWatchlistsInSettings()
- 
+        
         Watchlists=Globals.getWatchlistsFromSettings()
+      
         
-       
-        
+        tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
     }
     
-
- 
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        print("refresh")
+        Globals.updateWatchlistsInSettings()
+        Watchlists=Globals.getWatchlistsFromSettings()
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
+    
+    
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Watchlists.count
     }
     
+   
+    
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+     //   tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CellSubscribe
         cell.NameCell.text = Watchlists[indexPath.row].name
         cell.DescriptionCell.text = Watchlists[indexPath.row].description
@@ -43,13 +59,13 @@ var Watchlists: [Globals.Watchlist] = []
         if(!Watchlists[indexPath.row].dashboard){
            
             
-            cell.DashboardBTN.backgroundColor = UIColor.green
+            cell.DashboardBTN.backgroundColor = UIColor.white
             cell.DashboardBTN.layer.borderColor = UIColor.darkGray.cgColor
             cell.DashboardBTN.layer.borderWidth = 1
             cell.DashboardBTN.layer.cornerRadius = 5.0
             
         }else{
-            cell.DashboardBTN.backgroundColor = UIColor.white
+            cell.DashboardBTN.backgroundColor = UIColor.green
             cell.DashboardBTN.layer.borderColor = UIColor.darkGray.cgColor
             cell.DashboardBTN.layer.borderWidth = 1
             cell.DashboardBTN.layer.cornerRadius = 5.0
@@ -69,12 +85,12 @@ var Watchlists: [Globals.Watchlist] = []
         if (sender.backgroundColor==UIColor.green)
         {
             sender.backgroundColor=UIColor.white
-            Watchlists[buttonTag].dashboard=true
+            Watchlists[buttonTag].dashboard=false
         }
         else
         {
             sender.backgroundColor=UIColor.green
-            Watchlists[buttonTag].dashboard=false
+            Watchlists[buttonTag].dashboard=true
 
         }
      

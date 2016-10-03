@@ -10,21 +10,28 @@
 import UIKit
 
 class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
-    var refreshControl: UIRefreshControl!
     var Watchlists: [Globals.Watchlist] = []
+    
+    
+    @IBOutlet var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Globals.updateWatchlistsInSettings()
-        
-        Watchlists=Globals.getWatchlistsFromSettings()
-        
-        
-        
+
+        Watchlists=Globals.getDashboardWatchlistsFromSettings()
+        tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
     }
     
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        print("refresh")
+        Globals.updateWatchlistsInSettings()
+        Watchlists=Globals.getDashboardWatchlistsFromSettings()
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
+
     
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,21 +40,17 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellDashboard") as! CellDashboard
-     //   cell.NameCell.text = Watchlists[indexPath.row].name
+        cell.NameLBL.text = Watchlists[indexPath.row].name
         cell.DescriptionLBL.text = Watchlists[indexPath.row].description
-     //   cell.TypeCell.text = Watchlists[indexPath.row].type
-        
-        
-        
+        cell.ValueLBL.text = String(Watchlists[indexPath.row].recordCount)
         cell.accessoryType = .detailDisclosureButton
-        
+     
         
         return cell
     }
     
     
    
-    
     
     
     

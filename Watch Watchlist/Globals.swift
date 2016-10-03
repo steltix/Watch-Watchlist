@@ -230,15 +230,25 @@ class Globals {
                     Globals.sharedManager.connectionStatus="Connected but feature availableWatchlistsCheck not available on server"
                 }
             }
+            
         }
         
         //get Token
         let s = Just.post(JDEURL + "/jderest/tokenrequest", json:["password":JDEPassword,".type":" com.oracle.e1.jdemf.LoginRequest","ssoEnabled":false,"applicationName":"M03015","username":JDEUser,"role":JDEdefaultRole,"environment":JDEdefaultEnvironment,"jasserver":JDEdefaultJasServer,"deviceName":UIDevice.current.name])
-        //print("token request result: " + s.text!)
+        //     print("token request result: " + s.text!)
         if let data = s.text!.data(using: String.Encoding.utf8) {
             let json = JSON(data: data)
             JDEActiveToken=json["userInfo"]["token"].stringValue
+            let  JDETokenResult=json["message"].stringValue
+            print ("Logon Message: " + JDETokenResult)
+            if (JDETokenResult.contains("Authorization Failure"))
+            {
+                Globals.sharedManager.connectionStatus="Authorization Failure" + " while connecting to " + JDEdefaultJasServer
+                //exit(1)
+            }
             // print(JDEActiveToken)
+            
+            
         }
         
         //get Watchlists
