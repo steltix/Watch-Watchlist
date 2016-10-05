@@ -236,11 +236,10 @@
                                     <outlet property="delegate" destination="eep-aW-aFF" id="ShS-TM-pmL"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" textAlignment="center" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hdj-Z3-sLk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" usesAttributedText="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hdj-Z3-sLk">
                                 <frame key="frameInset" minY="64" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
