@@ -13,12 +13,16 @@ import UIKit
 
 class CellSubscribe: UITableViewCell {
 
-    @IBOutlet weak var NameCell: UILabel!
-    @IBOutlet weak var DescriptionCell: UILabel!
-    @IBOutlet weak var TypeCell: UILabel!
-    @IBOutlet weak var DashboardBTN: UIButton!
+    
+    @IBOutlet var NameLBL: UILabel!
     
     
+    
+    @IBOutlet var TypeLBL: UILabel!
+    
+        
+    @IBOutlet var SubscribeSWT: UISwitch!
+       
    
    
     

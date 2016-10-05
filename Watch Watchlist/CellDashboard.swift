@@ -13,13 +13,11 @@ import UIKit
 
 class CellDashboard: UITableViewCell  {
     
+    @IBOutlet var NameLBL: UILabel!
+    @IBOutlet var StatusBTN: UIButton!
     
     
-    @IBOutlet weak var NameLBL: UILabel!
-    @IBOutlet weak var DescriptionLBL: UILabel!
       
-    @IBOutlet weak var ValueLBL: UILabel!
-  
     
     
     override func awakeFromNib() {
