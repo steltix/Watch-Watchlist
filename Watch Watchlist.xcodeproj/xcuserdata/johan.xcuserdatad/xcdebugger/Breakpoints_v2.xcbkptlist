@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Watch Watchlist/TableControllerDashboard.swift"
-            timestampString = "497375382.304693"
+            timestampString = "497472837.510499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145">
+            startingLineNumber = "163"
+            endingLineNumber = "163">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

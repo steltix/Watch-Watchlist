@@ -28,4 +28,5 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBOutlet var dashboardTBL: WKInterfaceGroup!
 }

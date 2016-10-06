@@ -12,7 +12,9 @@ import UIKit
 class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // var Watchlists: [Globals.Watchlist] = []
     
-    @IBOutlet var lastUpdateLBL: UITextField!
+    
+    @IBOutlet var lastUpdateLBL: UILabel!
+    
     
     @IBOutlet var tableView: UITableView!
     
@@ -22,14 +24,18 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
         print("just refresh table")
         Globals.updateDashboardWatchlists()
         self.tableView.reloadData()
-        self.lastUpdateLBL.text=Globals.sharedGlobal.lastUpdated
+        var connectionStatus=""
+        if (Globals.sharedGlobal.connectionStatus=="Connected") {connectionStatus="Online   "} else {connectionStatus="Offline   "}
+        self.lastUpdateLBL.text=connectionStatus + Globals.sharedGlobal.lastUpdated
         
         DispatchQueue.global(qos: .background).async {
             print("Start update on background thread")
             Globals.updateWatchlists()
             
             self.tableView.reloadData()
-            self.lastUpdateLBL.text=Globals.sharedGlobal.lastUpdated
+            var connectionStatus=""
+            if (Globals.sharedGlobal.connectionStatus=="Connected") {connectionStatus="Online   "} else {connectionStatus="Offline   "}
+            self.lastUpdateLBL.text=connectionStatus + Globals.sharedGlobal.lastUpdated
             print("End update on background thread")
         }
         
@@ -39,10 +45,13 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         Globals.loadWatchlists()
         Globals.updateDashboardWatchlists()
-        self.lastUpdateLBL.text=Globals.sharedGlobal.lastUpdated
+        var connectionStatus=""
+        if (Globals.sharedGlobal.connectionStatus=="Connected") {connectionStatus="Online   "} else {connectionStatus="Offline   "}
+        self.lastUpdateLBL.text=connectionStatus + Globals.sharedGlobal.lastUpdated
+        
         //Globals.getDashboardWatchlistsFromSettings()
         //Globals.sharedManager.sharedWatchlists=Globals.getDashboardWatchlistsFromSettings()
-        tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        //tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
         
         //keep refreshing
         
@@ -61,15 +70,15 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-    func handleRefresh(_ refreshControl: UIRefreshControl) {
-        print("refresh")
-        //Globals.getDashboardWatchlistsFromSettings()
-        self.tableView.reloadData()
-        self.lastUpdateLBL.text=Globals.sharedGlobal.lastUpdated
-        refreshControl.endRefreshing()
+   // func handleRefresh(_ refreshControl: UIRefreshControl) {
+  //      print("refresh")
+  //      //Globals.getDashboardWatchlistsFromSettings()
+  //      self.tableView.reloadData()
+  //      self.lastUpdateLBL.text=Globals.sharedGlobal.lastUpdated
+  //      refreshControl.endRefreshing()
         
         
-    }
+  //  }
     
     
     
@@ -81,30 +90,39 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellDashboard") as! CellDashboard
         cell.NameLBL.text = Globals.sharedGlobal.dashboardWatchLists[indexPath.row].name
-        cell.StatusBTN.layer.cornerRadius = 20
-        cell.StatusBTN.layer.borderWidth = 1
+        //cell.StatusBTN.layer.cornerRadius = 20
+        cell.StatusBTN.layer.borderWidth = 0
         cell.accessoryType = .none
         //print ("Adding to grid: " + Globals.sharedGlobal.dashboardWatchLists[indexPath.row].name )
         //print ("Rowcount: " + String(Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount))
         //print ("Critical: " + String(Globals.sharedGlobal.dashboardWatchLists[indexPath.row].criticalThreshold))
         //print ("Warning: " + String(Globals.sharedGlobal.dashboardWatchLists[indexPath.row].criticalThreshold))
+        let redIMG = UIImage(named:"red.png")
+        let yellowIMG = UIImage(named:"yellow.png")
+        let greenIMG = UIImage(named:"green.png")
+        
         if (Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount == -1)
         {
-            cell.StatusBTN.backgroundColor=UIColor.white
+            //cell.StatusBTN.backgroundColor=UIColor.white
+            
             cell.StatusBTN.setTitle("", for: UIControlState.normal)
+            cell.StatusBTN.setBackgroundImage(nil, for: .normal)
         }
         else
         {
             cell.StatusBTN.setTitle(String(Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount), for: UIControlState.normal)
-            cell.StatusBTN.backgroundColor=UIColor.green
+            cell.StatusBTN.setBackgroundImage(greenIMG, for: .normal)
+            //cell.StatusBTN.backgroundColor=UIColor.green
             if (Globals.sharedGlobal.dashboardWatchLists[indexPath.row].criticalThreshold>0)
             {
                 if ( Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount >= Globals.sharedGlobal.dashboardWatchLists[indexPath.row].criticalThreshold)
-                {cell.StatusBTN.backgroundColor=UIColor.red}
+                {//cell.StatusBTN.backgroundColor=UIColor.red
+                cell.StatusBTN.setBackgroundImage(redIMG, for: .normal)}
                 else
                 {
                     if ( Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount >= Globals.sharedGlobal.dashboardWatchLists[indexPath.row].warningThreshold)
-                    {cell.StatusBTN.backgroundColor=UIColor.orange}
+                    {//cell.StatusBTN.backgroundColor=UIColor.orange
+                    cell.StatusBTN.setBackgroundImage(yellowIMG, for: .normal)}
                 }
             }
         }   
