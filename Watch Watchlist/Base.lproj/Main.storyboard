@@ -128,7 +128,7 @@
         <!--About-->
         <scene sceneID="Dh3-fd-wfB">
             <objects>
-                <viewController title="About" id="IgR-bD-R62" customClass="ViewController" customModule="Watch_Watchlist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About" id="IgR-bD-R62" customClass="ViewControllerAbout" customModule="Watch_Watchlist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hf5-wi-uh0"/>
                         <viewControllerLayoutGuide type="bottom" id="LQ3-Kv-X4M"/>
