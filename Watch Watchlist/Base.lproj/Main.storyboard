@@ -128,7 +128,7 @@
         <!--About-->
         <scene sceneID="Dh3-fd-wfB">
             <objects>
-                <viewController title="About" id="IgR-bD-R62" sceneMemberID="viewController">
+                <viewController title="About" id="IgR-bD-R62" customClass="ViewController" customModule="Watch_Watchlist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hf5-wi-uh0"/>
                         <viewControllerLayoutGuide type="bottom" id="LQ3-Kv-X4M"/>
@@ -137,13 +137,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="steltix" translatesAutoresizingMaskIntoConstraints="NO" id="wCA-fY-Sph">
+                                <frame key="frameInset" minX="67" minY="57" width="240" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="30" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNI-xE-kee">
-                                <frame key="frameInset" minX="24" minY="179" width="326" height="404"/>
+                                <frame key="frameInset" minX="24" minY="206" width="326" height="404"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">This app alerts and synchronises  Watchlists from a Oracle J.D Edwards system. Watchlists can be subscribed so that their details status displays on the dashboard. Synchonisation happens automaticaly while the device is online. If a watchlist status changes to critical, a notification will show while Watchlists app is running in the background. This app requires J.D. Edwards tools version 9.1.2 and a AIS server to operate.
-</string>
+                                        <mutableString key="content">This application connects to your company Oracle JDEdwards EnterpriseOne Application Integration Server (‘AIS’) to fetch watchlists made visible to the user setup in the connection settings. This AIS server needs to run on release level 9.2.1 at minimum. To use this mobile application in demo mode use the open AIS server provided by Steltix (http://demo.steltix.com) with user demo and password demo. Steltix is the largest and most innovative JDEdwards consultancy service provider in Europe.
+
+All above mentioned trademarks and registered trademarks are property of their respective owners.</mutableString>
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="17"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -152,12 +157,16 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="steltix" translatesAutoresizingMaskIntoConstraints="NO" id="wCA-fY-Sph">
-                                <frame key="frameInset" minX="67" minY="57" width="240" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikb-gD-kXG">
+                                <frame key="frameInset" minY="151" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="http://www.steltix.com"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" link="YES"/>
+                        </accessibility>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="Manual" selectedImage="Manual" id="6JI-uo-Txp"/>
                 </viewController>

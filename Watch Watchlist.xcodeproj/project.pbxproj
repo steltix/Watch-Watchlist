@@ -30,6 +30,7 @@
 		04DED7B91D9842C000FCBD1D /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DED7B71D9842C000FCBD1D /* Just.swift */; };
 		04DED7BB1D9843CE00FCBD1D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DED7BA1D9843CE00FCBD1D /* SwiftyJSON.swift */; };
 		04DED7BC1D9843CE00FCBD1D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DED7BA1D9843CE00FCBD1D /* SwiftyJSON.swift */; };
+		04E31C7A1DA7D6D800780C7B /* ViewControllerAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E31C791DA7D6D800780C7B /* ViewControllerAbout.swift */; };
 		04EBF8C51D9D024A00A4A2F3 /* CellDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBF8C41D9D024A00A4A2F3 /* CellDashboard.swift */; };
 		04F125131DA4474A00F91E27 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F125121DA4474A00F91E27 /* Globals.swift */; };
 /* End PBXBuildFile section */
@@ -104,6 +105,7 @@
 		04DED7A21D98383C00FCBD1D /* Watch Watchlist WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Watch Watchlist WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
 		04DED7B71D9842C000FCBD1D /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Just.swift; sourceTree = "<group>"; };
 		04DED7BA1D9843CE00FCBD1D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		04E31C791DA7D6D800780C7B /* ViewControllerAbout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAbout.swift; sourceTree = "<group>"; };
 		04EA68981DA2BD460095BEEE /* Watch Watchlist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Watchlist.entitlements"; sourceTree = "<group>"; };
 		04EBF8C41D9D024A00A4A2F3 /* CellDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDashboard.swift; sourceTree = "<group>"; };
 		04F125121DA4474A00F91E27 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				04F125121DA4474A00F91E27 /* Globals.swift */,
 				04D9FAE51DA2F24C0041AD0E /* NotificationManager.swift */,
 				049694201D97F49000A56C00 /* ViewController.swift */,
+				04E31C791DA7D6D800780C7B /* ViewControllerAbout.swift */,
 				0441AA4D1D9B08800052FF4F /* ViewControllerSubscribe.swift */,
 				04BEBC6A1DA1AB37005A8C3F /* ViewControllerDashboard.swift */,
 				0441AA4F1D9B0BF10052FF4F /* TableControllerSubscribe.swift */,
@@ -357,6 +360,7 @@
 				0441AA4E1D9B08800052FF4F /* ViewControllerSubscribe.swift in Sources */,
 				04BEBC691DA1AB0F005A8C3F /* TableControllerDashboard.swift in Sources */,
 				04D9FAE61DA2F24C0041AD0E /* NotificationManager.swift in Sources */,
+				04E31C7A1DA7D6D800780C7B /* ViewControllerAbout.swift in Sources */,
 				04F125131DA4474A00F91E27 /* Globals.swift in Sources */,
 				049694211D97F49000A56C00 /* ViewController.swift in Sources */,
 				04EBF8C51D9D024A00A4A2F3 /* CellDashboard.swift in Sources */,
