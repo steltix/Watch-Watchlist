@@ -62,7 +62,7 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) // No need for semicolon
-       Globals.updateDashboardWatchlists()
+        Globals.updateDashboardWatchlists()
         print("refresh")
         self.tableView.reloadData()
         self.lastUpdateLBL.text=Globals.sharedGlobal.lastUpdated
@@ -70,15 +70,7 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-   // func handleRefresh(_ refreshControl: UIRefreshControl) {
-  //      print("refresh")
-  //      //Globals.getDashboardWatchlistsFromSettings()
-  //      self.tableView.reloadData()
-  //      self.lastUpdateLBL.text=Globals.sharedGlobal.lastUpdated
-  //      refreshControl.endRefreshing()
-        
-        
-  //  }
+    
     
     
     
@@ -89,43 +81,52 @@ class TableControllerDashboard: UIViewController, UITableViewDelegate, UITableVi
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellDashboard") as! CellDashboard
-        cell.NameLBL.text = Globals.sharedGlobal.dashboardWatchLists[indexPath.row].name
         //cell.StatusBTN.layer.cornerRadius = 20
-        cell.StatusBTN.layer.borderWidth = 0
+        //cell.StatusBTN.layer.borderWidth = 0
         cell.accessoryType = .none
         //print ("Adding to grid: " + Globals.sharedGlobal.dashboardWatchLists[indexPath.row].name )
         //print ("Rowcount: " + String(Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount))
         //print ("Critical: " + String(Globals.sharedGlobal.dashboardWatchLists[indexPath.row].criticalThreshold))
         //print ("Warning: " + String(Globals.sharedGlobal.dashboardWatchLists[indexPath.row].criticalThreshold))
-        let redIMG = UIImage(named:"red.png")
-        let yellowIMG = UIImage(named:"yellow.png")
-        let greenIMG = UIImage(named:"green.png")
+        
+        
+        
+        cell.StatusBTN.layer.cornerRadius = 0.5 * cell.StatusBTN.bounds.size.width
+        cell.StatusBTN.layer.borderWidth = 0.0
+        cell.StatusBTN.clipsToBounds = true
+        
         
         if (Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount == -1)
         {
-            //cell.StatusBTN.backgroundColor=UIColor.white
             
+            //No data yet
             cell.StatusBTN.setTitle("", for: UIControlState.normal)
-            cell.StatusBTN.setBackgroundImage(nil, for: .normal)
+            cell.StatusBTN.layer.backgroundColor = UIColor(red:255.0/255.0, green:255.0/255.0, blue:255.0/255.0, alpha:1).cgColor as CGColor
+            
+            
         }
         else
-        {
+        {    //Make it green
             cell.StatusBTN.setTitle(String(Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount), for: UIControlState.normal)
-            cell.StatusBTN.setBackgroundImage(greenIMG, for: .normal)
-            //cell.StatusBTN.backgroundColor=UIColor.green
+            cell.StatusBTN.layer.backgroundColor = UIColor(red:83.0/255.0, green:214.0/255.0, blue:105.0/255.0, alpha:1).cgColor as CGColor
             if (Globals.sharedGlobal.dashboardWatchLists[indexPath.row].criticalThreshold>0)
             {
+                //Make it red if critical
                 if ( Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount >= Globals.sharedGlobal.dashboardWatchLists[indexPath.row].criticalThreshold)
-                {//cell.StatusBTN.backgroundColor=UIColor.red
-                cell.StatusBTN.setBackgroundImage(redIMG, for: .normal)}
-                else
                 {
+                    cell.StatusBTN.layer.backgroundColor = UIColor(red:252.0/255.0, green:99.0/255.0, blue:93.0/255.0, alpha:1).cgColor as CGColor
+                }
+                else
+                {    //Make it orange is warning
                     if ( Globals.sharedGlobal.dashboardWatchLists[indexPath.row].recordCount >= Globals.sharedGlobal.dashboardWatchLists[indexPath.row].warningThreshold)
-                    {//cell.StatusBTN.backgroundColor=UIColor.orange
-                    cell.StatusBTN.setBackgroundImage(yellowIMG, for: .normal)}
+                    {
+                        cell.StatusBTN.layer.backgroundColor = UIColor(red:253.0/255.0, green:189.0/255.0, blue:65.0/255.0, alpha:1).cgColor as CGColor
+                    }
                 }
             }
-        }   
+        }
+        cell.NameLBL.text = Globals.sharedGlobal.dashboardWatchLists[indexPath.row].name
+        
         return cell
     }
     
